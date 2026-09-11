@@ -1,22 +1,20 @@
 package com.hospital.management.service;
 
 import java.util.List;
-import java.util.Optional;
 
-import com.hospital.management.entity.User;
+import com.hospital.management.dto.UserDTO;
 
 public interface UserService {
 
-    User createUser(User user);
+    UserDTO createUser(UserDTO userDTO);
 
-    User getUserById(Long id);
+    UserDTO getUserById(Long id);
 
-    List<User> getAllUsers();
+    List<UserDTO> getAllUsers();
 
-    Optional<User> getUserByEmail(String email);
+    UserDTO getUserByEmail(String email);
 
-    User updateUser(Long id, User user);
+    UserDTO updateUser(Long id, UserDTO userDTO);
 
-    User deleteUser(Long id);
-
+    UserDTO deleteUser(Long id);
 }

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.hospital.management.entity.Role;
+import com.hospital.management.dto.RoleDTO;
 import com.hospital.management.service.RoleService;
 
 @RestController
@@ -25,33 +25,35 @@ public class RoleController {
     }
 
     @PostMapping
-    public Role createRole(@RequestBody Role role) {
-        return roleService.createRole(role);
+    public RoleDTO createRole(@RequestBody RoleDTO roleDTO) {
+        return roleService.createRole(roleDTO);
     }
 
     @GetMapping
-    public List<Role> getAllRolles() {
+    public List<RoleDTO> getAllRoles() {
         return roleService.getAllRoles();
     }
 
     @GetMapping("/{id}")
-    public Role getRoleById(@PathVariable Long id) {
+    public RoleDTO getRoleById(@PathVariable Long id) {
         return roleService.getRoleById(id);
     }
 
-    @GetMapping("name/{name}")
-    public Role getRoleByName(@PathVariable String name) {
+    @GetMapping("/name/{name}")
+    public RoleDTO getRoleByName(@PathVariable String name) {
         return roleService.getRoleByName(name);
     }
 
     @PutMapping("/{id}")
-    public Role updateRole(@PathVariable Long id, @RequestBody Role role) {
-        return roleService.updateRole(id, role);
+    public RoleDTO updateRole(
+            @PathVariable Long id,
+            @RequestBody RoleDTO roleDTO) {
+
+        return roleService.updateRole(id, roleDTO);
     }
 
     @DeleteMapping("/{id}")
     public void deleteRole(@PathVariable Long id) {
         roleService.deleteRole(id);
     }
-
 }

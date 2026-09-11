@@ -2,20 +2,19 @@ package com.hospital.management.service;
 
 import java.util.List;
 
-import com.hospital.management.entity.Role;
+import com.hospital.management.dto.RoleDTO;
 
 public interface RoleService {
 
-    Role createRole(Role role);
+    RoleDTO createRole(RoleDTO roleDTO);
 
-    Role getRoleById(Long id);
+    RoleDTO getRoleById(Long id);
 
-    List<Role> getAllRoles();
+    List<RoleDTO> getAllRoles();
 
-    Role getRoleByName(String name);
+    RoleDTO getRoleByName(String name);
 
-    Role updateRole(Long id, Role role);
+    RoleDTO updateRole(Long id, RoleDTO roleDTO);
 
     void deleteRole(Long id);
-
 }
